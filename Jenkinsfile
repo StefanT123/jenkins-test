@@ -5,9 +5,9 @@ pipeline {
             steps {
                 sh 'echo something'
                 sh 'docker ps'
-                // script {
-                //     docker.image('laradock_workspace_1').withRun('composer --version')
-                // }
+                script {
+                    docker.image('laradock_workspace_1').withRun('composer --version')
+                }
             }
         }
     }
