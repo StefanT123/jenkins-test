@@ -11,6 +11,8 @@ pipeline {
                 sh 'php -r "unlink(\'composer-setup.php\');"'
                 sh 'composer --version'
                 sh 'chown -R $USER:$USER ~/.composer/'
+                sh 'composer install'
+                sh 'vendor/bin/phpunit'
             }
         }
     }
