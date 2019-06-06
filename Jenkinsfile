@@ -3,8 +3,9 @@ pipeline {
     stages {
         stage('build') {
             steps {
-                sh 'mvn test'
+                sh 'echo something'
             }
+            docker.image('laradock_workspace_1').withRun('composer --version')
         }
     }
 }
